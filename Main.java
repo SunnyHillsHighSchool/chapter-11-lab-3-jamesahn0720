@@ -1,23 +1,18 @@
 class Main {
   public static void main(String[] args) {
-   TenToAny tenToAny = new TenToAny();
-        tenToAny.setBN(234, 9);
-        tenToAny.getNewNum();
-    
-        tenToAny.setBN(100, 2);
-        tenToAny.getNewNum();
-    
-      tenToAny.setBN(10, 2);
-      tenToAny.getNewNum(); 
-    
-      tenToAny.setBN(15, 2);
-      tenToAny.getNewNum();
-    
-      tenToAny.setBN(256, 2);
-      tenToAny.getNewNum();
-    
-      tenToAny.setBN(100, 8);
-      tenToAny.getNewNum();
-        System.out.println(tenToAny.toString());
+   TenToAny test = new TenToAny(234,9);
+    System.out.println(test);
+
+    test.setNumber(100);
+    test.setBase(2);
+    System.out.println(test);
+
+    test.setNumber(56);
+    test.setBase(11);
+    System.out.println(test);
+
+    test.setNumber(250);
+    test.setBase(16);
+    System.out.println(test);
   }
 }
