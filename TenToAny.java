@@ -10,40 +10,40 @@ public class TenToAny
    private int newBase;
 
  public void setBN(int base10, int newBase) {
-        this.base10 = base10;
-        this.newBase = newBase;
+        base10 = b10;
+        newBase = any;
     }
 
-    private String answer;
+   public void setNumber(int n)
+  {
+    base10 = n;
+  }
+  public void setBase(int b)
+  {
+    newBase = b;
+  }
 
 	public String getNewNum()
 	{
-	int number = base10;
-        answer = "";
-        while (number != 0) {
-            int val = number % newBase;
-            if (val < 10) {
-                answer = val + answer;
-            } else if (val == 10) {
-                answer = "A" + answer;
-            } else if (val == 11) {
-                answer = "B" + answer;
-            } else if (val == 12) {
-                answer = "C" + answer;
-            } else if (val == 13) {
-                answer = "D" + answer;
-            } else if (val == 14) {
-                answer = "E" + answer;
-            } else if (val == 15) {
-                answer = "F" + answer;
-            }
-            number = number / newBase;
-        }
-        return answer;
+	int num = base10;
+		String newNum="";
+    while(num>0)
+    {
+      if(num%newBase >=10)
+      {
+        int a = num%newBase;
+        char c=Character.forDigit(a,newBase);    
+        newNum = Character.toUpperCase(c)+ newNum;
+      }else{
+        newNum = num%newBase+newNum;
+      }
+      num = num/newBase;
+    }
+		return newNum;
 	}
 
   public String toString() {
-        return base10 + " base 10 is " + answer + " in base " + newBase;
+        return ""+base10 + " base 10 is "+getNewNum()+" in base "+newBase;
     }
 	
 }
